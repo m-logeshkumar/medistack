@@ -10,7 +10,7 @@ services:
     depends_on:
       - db
     environment:
-      DB_HOST: db
+      DB_HOST: localhost
       DB_USER: root
       DB_PASS: root
       DB_NAME: medi_stack
@@ -22,7 +22,8 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: medi_stack
     volumes:
-      - db_data:/var/lib/mysql
-
+       - ./medistack.sql:/docker-entrypoint-initdb.d/medistack.sql
+       - db_data:/var/lib/mysql
+       
 volumes:
   db_data:
