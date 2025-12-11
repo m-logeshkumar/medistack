@@ -44,6 +44,7 @@ if (!$patients) {
         <table>
             <thead>
                 <tr>
+                    <th>Patient ID</th>
                     <th>Patient Name</th>
                     <th>Email</th>
                     <th>View Details</th>
@@ -51,6 +52,7 @@ if (!$patients) {
             <tbody>
                 <?php while ($patient = $patients->fetch_assoc()): ?>
                     <tr>
+                        <td><?php echo $patient['id']; ?></td>
                         <td><?php echo $patient['name']; ?></td>
                         <td><?php echo $patient['email']; ?></td>
                         <td><a href="view_patient.php?patient_id=<?php echo $patient['id']; ?>">View Details</a></td>
